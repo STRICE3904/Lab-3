@@ -14,12 +14,9 @@ using namespace std;
 float calculatemean(float data[]);
 float calculateSD(float data[]);
 void file();
-
+char a;
 int main()
 {
-	char a;
-	cout << "Input 4 integers:\n";
-	cin >> a; 
 	void infile();
 	float calculateSD(float data[]);
 
@@ -47,7 +44,10 @@ float calculateSD(float data[])
 //File opener and input outputer. 
 void infile()
 {
+	cout << "Input 4 integers:\n";
+	cin >> a;
 	ofstream myfile;
 	myfile.open("inMeanStd.dat", ios::out | ios::app | ios::binary);
 	myfile << a;
+	myfile.close();
 }
