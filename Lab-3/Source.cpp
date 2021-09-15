@@ -17,7 +17,12 @@ void file();
 char a;
 int main()
 {
-	void infile();
+	cout << "Input 4 integers:\n";
+	cin >> a;
+	ofstream myfile;
+	myfile.open("inMeanStd.dat");
+	myfile << "FUUUUUCK\n";
+	myfile.close();
 	float calculateSD(float data[]);
 
 }
