@@ -47,7 +47,7 @@ void infile()
 	cout << "Input 4 integers:\n";
 	cin >> a;
 	ofstream myfile;
-	myfile.open("inMeanStd.dat", ios::out | ios::app | ios::binary);
+	myfile.open("inMeanStd.dat");
 	myfile << a;
 	myfile.close();
 }
