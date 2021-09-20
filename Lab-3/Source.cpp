@@ -11,48 +11,16 @@
 
 using namespace std;
 
-float calculatemean(float data[]);
-float calculateSD(float data[]);
-void file();
-char a;
 int main()
 {
+	float a;
+	float b;
+	float c;
+	float d;
 	cout << "Input 4 integers:\n";
+	cin >> a >> b >> c >> d;
+	ifstream myfile;
+	myfile.open("<path to file>");
 	cin >> a;
-	ofstream myfile;
-	myfile.open("inMeanStd.dat");
-	myfile << "FUUUUUCK\n";
-	myfile.close();
-	float calculateSD(float data[]);
-
-}
-
-//Standard deviation calculator.
-float calculateSD(float data[]) 
-{
-	float sum = 0.0, mean, standardDeviation = 0.0;
-	int i;
-
-	for (i = 0; i < 4; ++i) {
-		sum += data[i];
-	}
-
-	mean = sum / 4;
-
-	for (i = 0; i < 10; ++i) {
-		standardDeviation += pow(data[i] - mean, 2);
-	}
-
-	return sqrt(standardDeviation / 4);
-}
-
-//File opener and input outputer. 
-void infile()
-{
-	cout << "Input 4 integers:\n";
-	cin >> a;
-	ofstream myfile;
-	myfile.open("inMeanStd.dat");
-	myfile << a;
 	myfile.close();
 }
