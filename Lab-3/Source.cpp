@@ -8,19 +8,29 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-	float a;
-	float b;
-	float c;
-	float d;
+	string data1;
+	string data2;
+	string data3;
+	string data4;
+	string inputFileName;
+	string outputFileName;
+	ifstream infile;
+	ofstream outfile;
+
+	infile.open("inMeanStd.dat");
+	outfile.open("outMeanStd.dat");
+
 	cout << "Input 4 integers:\n";
-	cin >> a >> b >> c >> d;
-	ifstream myfile;
-	myfile.open("<path to file>");
-	cin >> a;
-	myfile.close();
+	cin >> data1 >> data2 >> data3 >> data4;
+
+	infile.close();
+	outfile.close();
+
+	return 0;
 }
