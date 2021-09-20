@@ -24,4 +24,3 @@ int main()
 	cin >> a;
 	myfile.close();
 }
-
