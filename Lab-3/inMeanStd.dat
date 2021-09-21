@@ -1,1 +1,4 @@
-1
+int data1 = 30;
+int data2 = 27;
+int data3 = 16;
+int data4 = 9;
