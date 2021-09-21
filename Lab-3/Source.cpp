@@ -32,8 +32,8 @@ int main()
 	infile.open("inMeanStd.dat");
 	outfile.open("outMeanStd.dat");
 	//getline(inFile, data);
-	infile >> data1;
-	cout << data1;
+	infile >> data1 >> data2 >> data3 >> data4;
+	cout << data1 << " " << data2 << " " << data3 << " " << data4;
 	infile.close();
 	outfile.close();
 
