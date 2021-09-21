@@ -15,10 +15,10 @@ void mathStandard();
 void mathMean();
 
 //These are the variables being ussed for all functions that are inputed by the user
-int data1 = 10;
-int data2 = 27;
-int data3 = 16;
-int data4 = 9;
+int data1;
+int data2;
+int data3;
+int data4;
 
 int main()
 {
@@ -32,7 +32,8 @@ int main()
 	infile.open("inMeanStd.dat");
 	outfile.open("outMeanStd.dat");
 	//getline(inFile, data);
-	
+	infile >> data1;
+	cout << data1;
 	infile.close();
 	outfile.close();
 
