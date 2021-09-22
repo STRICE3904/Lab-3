@@ -5,17 +5,17 @@
 * Computation of mean and standard deviation of a poputlation set by file "inMeanStd.dat" and
 * with an outpute called "outMeanStd.dat
 */
-#include <iostream>
-#include <fstream>
-#include <cmath>
-#include <string>
+#include <iostream> //Main word database
+#include <fstream> //Database for the files
+#include <cmath> // Database for the math
+#include <string> //Database for the strings
 
-using namespace std;
-void mathStandard();
-void mathMean();
+using namespace std; //Alows for more simple typing
+void mathStandard(); //Function for the Standard deviation
+void mathMean(); // Function for the Mean
 
 //These are the variables being ussed for all functions that are inputed by the file
-int data1;
+int data1; 
 int data2;
 int data3;
 int data4;
@@ -24,13 +24,13 @@ int main()
 {
 
 	//These are the strings for the files so the data can be inputed and exported
-	string inputFileName = "C:/Users/quinn/source";
-	string outputFileName = "C:/Users/quinn/source/Lab-3";
-	ifstream infile;
-	ofstream outfile;
+	string inputFileName = "C:/Users/quinn/source"; //File location
+	string outputFileName = "C:/Users/quinn/source/Lab-3"; //File location
+	ifstream infile; //File identifier
+	ofstream outfile; //File identifier
 
 	//This is the start of the file prosses
-	infile.open("inMeanStd.dat");
+	infile.open("inMeanStd.dat"); 
 	outfile.open("outMeanStd.dat");
 
 	//file being transported into variables then exported to the screan to check it works. 
