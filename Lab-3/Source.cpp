@@ -20,6 +20,9 @@ int data2;
 int data3;
 int data4;
 
+float Stdv;
+float Mean;
+
 int main()
 {
 
@@ -43,6 +46,11 @@ int main()
 	//Returning the new values back into the file outMeanStd.dat
 
 	infile.close();
+
+	mathMean();
+	mathStandard();
+
+	outfile << Mean << Stdv;
 	outfile.close();
 
 	return 0;
@@ -59,6 +67,7 @@ void mathMean()
 
 	//The mean is then outputed to teh screan
 	cout << "The mean of the inputed values is: " << Mean << endl;
+
 }
 void mathStandard()
 {
@@ -82,4 +91,5 @@ void mathStandard()
 	//The Standard deviation is calculated from the vareince here
 	float StDv = float(sqrt(Varience));
 	cout << "Standard Deviation of the inputed values = " << StDv << endl;
+	
 }
