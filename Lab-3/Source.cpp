@@ -20,7 +20,7 @@ int data2;
 int data3;
 int data4;
 
-float Stdv;
+float StDv;
 float Mean;
 
 int main()
@@ -50,7 +50,7 @@ int main()
 	mathMean();
 	mathStandard();
 
-	outfile << Mean << Stdv;
+	outfile << Mean << " " <<  StDv << endl;
 	outfile.close();
 
 	return 0;
