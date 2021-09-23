@@ -15,26 +15,20 @@ void mathStandard(); //Function for the Standard deviation
 void mathMean(); // Function for the Mean
 
 //These are the variables being ussed for all functions that are inputed by the file
+	//These are the strings for the files so the data can be inputed and exported
+string inputFileName = "C:/Users/quinn/source"; //File location
+string outputFileName = "C:/Users/quinn/source/Lab-3"; //File location
+ifstream infile; //File identifier
+ofstream outfile; //File identifier
 int data1; 
 int data2;
 int data3;
 int data4;
 
-float StDv;
-float Mean;
-
 int main()
 {
-
-	//These are the strings for the files so the data can be inputed and exported
-	string inputFileName = "C:/Users/quinn/source"; //File location
-	string outputFileName = "C:/Users/quinn/source/Lab-3"; //File location
-	ifstream infile; //File identifier
-	ofstream outfile; //File identifier
-
 	//This is the start of the file prosses
 	infile.open("inMeanStd.dat"); 
-	outfile.open("outMeanStd.dat");
 
 	//file being transported into variables then exported to the screan to check it works. 
 	infile >> data1 >> data2 >> data3 >> data4;
@@ -50,13 +44,14 @@ int main()
 	mathMean();
 	mathStandard();
 
-	outfile << Mean << " " <<  StDv << endl;
-	outfile.close();
+	
+
 
 	return 0;
 }
 void mathMean()
 {
+	outfile.open("outMeanStd.dat");
 	//The values are added together for the first step of calculating the mean
 	float Add;
 	Add = float(data1) + float(data2) + float(data3) + float(data4);
@@ -67,6 +62,8 @@ void mathMean()
 
 	//The mean is then outputed to teh screan
 	cout << "The mean of the inputed values is: " << Mean << endl;
+	outfile << Mean << endl;
+	outfile.close();
 
 }
 void mathStandard()
@@ -74,6 +71,7 @@ void mathStandard()
 	/*This is the math for the standard deviation. Since they both require mean,
 	* mean has been copied down for the standard deviation.
 	*/
+	outfile.open("outMeanStd.dat");
 	float Add;
 	Add = float(data1) + float(data2) + float(data3) + float(data4);
 	float Mean;
@@ -91,5 +89,7 @@ void mathStandard()
 	//The Standard deviation is calculated from the vareince here
 	float StDv = float(sqrt(Varience));
 	cout << "Standard Deviation of the inputed values = " << StDv << endl;
+	outfile << StDv << endl;
+	outfile.close();
 	
 }
