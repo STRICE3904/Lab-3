@@ -29,6 +29,7 @@ int main()
 {
 	//This is the start of the file prosses
 	infile.open("inMeanStd.dat"); 
+	outfile.open("outMeanStd.dat");
 
 	//file being transported into variables then exported to the screan to check it works. 
 	infile >> data1 >> data2 >> data3 >> data4;
@@ -44,6 +45,9 @@ int main()
 	mathMean();
 	mathStandard();
 
+	outfile.close();
+
+
 	
 
 
@@ -51,7 +55,7 @@ int main()
 }
 void mathMean()
 {
-	outfile.open("outMeanStd.dat");
+	
 	//The values are added together for the first step of calculating the mean
 	float Add;
 	Add = float(data1) + float(data2) + float(data3) + float(data4);
@@ -63,7 +67,6 @@ void mathMean()
 	//The mean is then outputed to teh screan
 	cout << "The mean of the inputed values is: " << Mean << endl;
 	outfile << Mean << endl;
-	outfile.close();
 
 }
 void mathStandard()
@@ -71,7 +74,6 @@ void mathStandard()
 	/*This is the math for the standard deviation. Since they both require mean,
 	* mean has been copied down for the standard deviation.
 	*/
-	outfile.open("outMeanStd.dat");
 	float Add;
 	Add = float(data1) + float(data2) + float(data3) + float(data4);
 	float Mean;
@@ -90,6 +92,5 @@ void mathStandard()
 	float StDv = float(sqrt(Varience));
 	cout << "Standard Deviation of the inputed values = " << StDv << endl;
 	outfile << StDv << endl;
-	outfile.close();
 	
 }
