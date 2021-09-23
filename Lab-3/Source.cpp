@@ -66,7 +66,7 @@ void mathMean()
 
 	//The mean is then outputed to teh screan
 	cout << "The mean of the inputed values is: " << Mean << endl;
-	outfile << Mean << endl;
+	outfile << "Mean is: " << Mean << endl;
 
 }
 void mathStandard()
@@ -91,7 +91,7 @@ void mathStandard()
 	//The Standard deviation is calculated from the vareince here
 	float StDv = float(sqrt(Varience));
 	cout << "Standard Deviation of the inputed values = " << StDv << endl;
-	outfile << StDv << endl;
+	outfile << "Stadnard Deviation is: " << StDv << endl;
 
 	
 }
