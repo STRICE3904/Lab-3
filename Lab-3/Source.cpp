@@ -92,5 +92,6 @@ void mathStandard()
 	float StDv = float(sqrt(Varience));
 	cout << "Standard Deviation of the inputed values = " << StDv << endl;
 	outfile << StDv << endl;
+
 	
 }
