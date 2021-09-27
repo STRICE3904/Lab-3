@@ -15,6 +15,7 @@ void mathStandardFile(); //Function for the Standard deviation
 void mathMean(); // Function for the Mean
 void InputStDv();
 
+
 //These are the variables being ussed for all functions that are inputed by the file
 	//These are the strings for the files so the data can be inputed and exported
 string inputFileName = "C:/Users/quinn/source"; //File location
