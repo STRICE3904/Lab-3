@@ -32,7 +32,17 @@ int main()
 	//This is the start of the file prosses
 	infile.open("inMeanStd.dat"); 
 	outfile.open("outMeanStd.dat");
-
+	//incase files cannot be found
+	if (!infile)
+	{
+		cout << "cannot open file";
+		return 1;
+	}
+	if (!outfile)
+	{
+		cout << "cannot open file";
+		return 1;
+	}
 	//file being transported into variables then exported to the screan to check it works. 
 	infile >> data1 >> data2 >> data3 >> data4;
 	cout << "Data from inMeanStd.dat = ";
