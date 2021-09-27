@@ -3,7 +3,8 @@
 * September 29th
 * Lab 3
 * Computation of mean and standard deviation of a poputlation set by file "inMeanStd.dat" and
-* with an outpute called "outMeanStd.dat
+* with an outpute called "outMeanStd.dat. Then the usser inputs 4 integers and the mean and 
+* standard deviation are calculated from thoughs four integers. 
 */
 #include <iostream> //Main word database
 #include <fstream> //Database for the files
