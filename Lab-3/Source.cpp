@@ -11,8 +11,9 @@
 #include <string> //Database for the strings
 
 using namespace std; //Alows for more simple typing
-void mathStandard(); //Function for the Standard deviation
+void mathStandardFile(); //Function for the Standard deviation
 void mathMean(); // Function for the Mean
+void InputStDv();
 
 //These are the variables being ussed for all functions that are inputed by the file
 	//These are the strings for the files so the data can be inputed and exported
@@ -20,10 +21,10 @@ string inputFileName = "C:/Users/quinn/source"; //File location
 string outputFileName = "C:/Users/quinn/source/Lab-3"; //File location
 ifstream infile; //File identifier
 ofstream outfile; //File identifier
-int data1; 
-int data2;
-int data3;
-int data4;
+int data1; //global variable for mean and standard deviation
+int data2;//global variable for mean and standard deviation
+int data3;//global variable for mean and standard deviation
+int data4;//global variable for mean and standard deviation
 
 int main()
 {
@@ -40,14 +41,14 @@ int main()
 
 	//Returning the new values back into the file outMeanStd.dat
 
-	infile.close();
+	infile.close();//closing the infile 
 
-	mathMean();
-	mathStandard();
+	mathMean();//calling the mean function
+	mathStandardFile();//caling the standard deviation fucntion
 
-	outfile.close();
+	outfile.close();//closing the outfile after the values were inputed
 
-
+	InputStDv();//opening the function that allows usser input 
 	
 
 
@@ -65,33 +66,58 @@ void mathMean()
 	Mean = double(Add / 4);
 
 	//The mean is then outputed to teh screan
-	cout << "The mean of the inputed values is: " << Mean << endl;
-	outfile << "Mean is: " << Mean << endl;
+	cout << "The mean of the inputed values is: " << Mean << endl; //output of the mean to the screen
+	outfile << "Mean is: " << Mean << endl; //output of the mean to the screen
 
 }
-void mathStandard()
+void mathStandardFile()
 {
 	/*This is the math for the standard deviation. Since they both require mean,
 	* mean has been copied down for the standard deviation.
 	*/
-	float Add;
-	Add = float(data1) + float(data2) + float(data3) + float(data4);
-	float Mean;
-	Mean = double(Add / 4);
+	float Add;//variable for the addition
+	Add = float(data1) + float(data2) + float(data3) + float(data4);//addition of variables
+	float Mean;//variable for the Mean
+	Mean = double(Add / 4);//calulation of the mean
 	
 	//Each part of the sum for the vareince is calculated seperately to minimize errors. 
-	float VD1 = float(data1) - float(Mean);
-	float VD2 = float(data2) - float(Mean);
-	float VD3 = float(data3) - float(Mean);
-	float VD4 = float(data4) - float(Mean);
+	float VD1 = float(data1) - float(Mean);//calculation for the first part of the vareince equation
+	float VD2 = float(data2) - float(Mean);//calculation for the first part of the vareince equation
+	float VD3 = float(data3) - float(Mean);//calculation for the first part of the vareince equation
+	float VD4 = float(data4) - float(Mean);//calculation for the first part of the vareince equation
+
+	//The population vareince is calculated here
+	float Varience = float(pow(VD1, 2) + pow(VD2, 2) + pow(VD3, 2) + pow(VD4, 2)) / float(4);
+
+	//The Standard deviation is calculated from the vareince here
+	float StDv = float(sqrt(Varience));//calculation for the standard deviation
+	cout << "Standard Deviation of the inputed values = " << StDv << endl;//output of the standard deviation 
+	outfile << "Stadnard Deviation is: " << StDv << endl;//output to the file of the standard deviation
+}
+void InputStDv()
+{
+	float x;
+	float y;
+	float z;
+	float a; 
+
+	cout << "Input 4 numbers to get the mean and the standard deviation: " << endl;
+	cin >> x >> y >> z >> a;
+	float Add;
+	Add = float(x) + float(y) + float(z) + float(a);
+	float Mean;
+	Mean = float(Add / 4);
+
+	//Each part of the sum for the vareince is calculated seperately to minimize errors. 
+	float VD1 = float(x) - float(Mean);
+	float VD2 = float(y) - float(Mean);
+	float VD3 = float(z) - float(Mean);
+	float VD4 = float(a) - float(Mean);
 
 	//The population vareince is calculated here
 	float Varience = float(pow(VD1, 2) + pow(VD2, 2) + pow(VD3, 2) + pow(VD4, 2)) / float(4);
 
 	//The Standard deviation is calculated from the vareince here
 	float StDv = float(sqrt(Varience));
-	cout << "Standard Deviation of the inputed values = " << StDv << endl;
-	outfile << "Stadnard Deviation is: " << StDv << endl;
-
-	
+	cout << "Mean is: " << Mean << "and standard deviation is: " << StDv << endl;
 }
