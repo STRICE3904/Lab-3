@@ -97,13 +97,14 @@ void mathStandardFile()
 }
 void InputStDv()
 {
-	float x;
-	float y;
-	float z;
-	float a; 
+	float x;//Variable for the input math calculations
+	float y;//Variable for the input math calculations
+	float z;//Variable for the input math calculations
+	float a; //Variable for the input math calculations
 
 	cout << "Input 4 numbers to get the mean and the standard deviation: " << endl;
-	cin >> x >> y >> z >> a;
+	cin >> x >> y >> z >> a;//input for math calculations
+	//math calculations
 	float Add;
 	Add = float(x) + float(y) + float(z) + float(a);
 	float Mean;
