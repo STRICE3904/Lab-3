@@ -14,7 +14,7 @@
 using namespace std; //Alows for more simple typing
 void mathStandardFile(); //Function for the Standard deviation
 void mathMean(); // Function for the Mean
-void InputStDv();
+void InputStDv(); //Fuction for user input
 
 
 //These are the variables being ussed for all functions that are inputed by the file
